@@ -1,5 +1,3 @@
-using System;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerHealthComponent : HealthComponent
@@ -8,12 +6,5 @@ public class PlayerHealthComponent : HealthComponent
     {
         // Initialize health
         SetHealth(maxHealth);
-    }
-
-    private void Update()
-    {
-        Debug.Log(_health);
-        
-        if (Keyboard.current.spaceKey.wasPressedThisFrame) TakeDamage(1);
     }
 }
