@@ -14,7 +14,6 @@ public class PauseMenu : MonoBehaviour
 
     private void ChangePauseState(InputAction.CallbackContext ctx)
     {
-        // if (!ctx.started) return;
         _isPaused = !_isPaused;
 
         if (_isPaused) Pause();
