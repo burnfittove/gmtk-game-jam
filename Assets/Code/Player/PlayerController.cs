@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _movementDirection;
     public float speed;
+    private BulletPooling _bulletPooling;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _bulletPooling = GetComponentInChildren<BulletPooling>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,6 +24,19 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (_movementDirection != Vector2.zero) _rb.MovePosition(_rb.position + _movementDirection * (speed * Time.deltaTime));
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            InitiateBullet(_bulletPooling.GetBullet());
+        }
+    }
+    
+    private GameObject InitiateBullet(GameObject bullet)
+    {
+        bullet.transform.position = transform.position;
+        bullet.transform.rotation = transform.rotation;
+        bullet.SetActive(true);
+        return bullet;
     }
 
     private void Move(InputAction.CallbackContext ctx)
