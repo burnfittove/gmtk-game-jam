@@ -842,8 +842,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStateController
   roamingMovementCooldownTimer: 3
   roamingMovementTimer: 2
-  roamingMovementSpeed: 3
-  chasingMovementSpeed: 10
+  roamingMovementSpeed: 5
+  chasingMovementSpeed: 12
 --- !u!114 &1615345355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62d52380e6d3153b9d72297010036d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  detectionRadius: 2
+  detectionRadius: 3
   detectionMask:
     serializedVersion: 2
     m_Bits: 128

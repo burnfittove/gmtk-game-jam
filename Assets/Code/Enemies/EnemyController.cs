@@ -29,13 +29,13 @@ public class EnemyController : MonoBehaviour
 
     public void MoveEnemy(Vector2 direction, float movementSpeed)
     {
-        _rb.MovePosition(_rb.position + direction.normalized * (movementSpeed * Time.fixedDeltaTime));
+        _rb.MovePosition(_rb.position + direction.normalized * (movementSpeed * Time.deltaTime));
     }
 
     public Vector2 GetPlayerPosition()
     {
         if (_colliders.Length == 0) return Vector2.zero;
-        return _colliders[0].transform.position;
+        return _colliders[0].transform.position - transform.position;
     }
 
     public bool IsPlayerInRange()
