@@ -7,6 +7,7 @@ namespace Code.UI
     {
         public void UnpauseGame()
         {
+            if (!GameEventManager.instance) return;
             GameEventManager.instance.inputEvents.OnPause(new InputAction.CallbackContext());
         }
     }

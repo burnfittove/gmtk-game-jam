@@ -6,6 +6,7 @@ namespace Code.UI
     {
         public void QuitGame()
         {
+            if (!GameEventManager.instance) return;
             GameEventManager.instance.miscellaneousEvents.OnQuitGame();
         }
     }
