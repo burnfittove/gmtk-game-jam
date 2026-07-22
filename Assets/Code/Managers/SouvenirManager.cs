@@ -1,0 +1,83 @@
+using System;
+using System.Linq;
+using Unity.VisualScripting.Dependencies.NCalc;
+using UnityEngine;
+using Random = UnityEngine.Random;
+
+public class SouvenirManager : MonoBehaviour
+{
+    public static SouvenirManager instance;
+    public GameObject[] souvenirs;
+    public int souvenirCount;
+    private bool _isSouvenirsCollected;
+
+    private void Awake()
+    {
+        if (instance != this && instance)
+        {
+            Debug.LogError("There are multiple instances of Souvenir Manager!");
+            gameObject.SetActive(false);
+            return;
+        }
+        instance = this;    
+        
+        souvenirs = new GameObject[souvenirCount];
+    }
+
+    private void Start()
+    {
+        if (!GameEventManager.instance) return;
+        GameEventManager.instance.souvenirEvents.AddSouvenir += AddSouvenir;
+        GameEventManager.instance.souvenirEvents.RemoveSouvenir += RemoveSouvenir;
+    } 
+
+    private void AddSouvenir(GameObject souvenir)
+    {
+        // Check if the souvenir is already in the list
+        if (IsSouvenirCollected(souvenir)) return;
+        
+        for (var i = 0; i < souvenirCount; i++)
+        {
+            if (souvenirs[i]) continue; // If the slot is not null, continue
+            souvenirs[i] = souvenir;    // Otherwise, add the souvenir to the empty slot
+            break;
+        }
+
+        if (souvenirs.Any(s => !s)) // If the list is not yet full, return
+        {
+            return;
+        }
+        if (!GameEventManager.instance) return;
+        GameEventManager.instance.souvenirEvents.OnSouvenirListComplete();  // Otherwise, signal to all subscribers that the list is complete
+        _isSouvenirsCollected = true;                                       // and mark it as such
+    }
+
+    private void RemoveSouvenir()
+    {
+        for (var i = 0; i < souvenirCount; i++)
+        {
+            if (!souvenirs[i]) continue;
+            souvenirs.SetValue(null, i);
+            break;
+        }
+
+        if (!_isSouvenirsCollected) return;
+        if (!GameEventManager.instance) return;
+        GameEventManager.instance.souvenirEvents.OnSouvenirListIncomplete();    // Signal to all subscribers that the list is no longer complete if it was complete prior 
+    }
+    
+    public int GetSouvenirCount()
+    {
+        return souvenirCount;
+    }
+
+    private bool IsArrayEmpty()
+    {
+        return souvenirs.All(s => !s);
+    }
+
+    private bool IsSouvenirCollected(GameObject souvenir)
+    {
+        return souvenirs.Any(s => s == souvenir);
+    }
+}
