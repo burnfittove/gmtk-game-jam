@@ -123,17 +123,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62d52380e6d3153b9d72297010036d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  detectionRadius: 6
+  detectionRadius: 8
   detectionRadiusBuffer: 0
-  detectionRadiusDecreaseDivider: 3
+  detectionRadiusDecreaseDivider: 4
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
-  roamingMovementSpeed: 5.5
-  movementCooldownTimer: 0.3
-  movementTimer: 0.8
+  roamingMovementSpeed: 6
+  movementCooldownTimer: 0.2
+  movementTimer: 0.5
   randomAddedRange: {x: -0.1, y: 0.2}
-  chasingMovementSpeed: 6.5
+  chasingMovementSpeed: 6
   chaseEmptyPlayer: 1
   OnTouchPlayer:
     m_PersistentCalls:
@@ -191,7 +191,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

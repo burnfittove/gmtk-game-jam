@@ -4,10 +4,11 @@ using UnityEngine.UI;
 public class DisplaySouvenirs : MonoBehaviour
 {
     public Image[] slots;
+    public Sprite emptySlot;
 
     private void Start()
     {
-        HideAllSlots();
+        Initialize();
 
         if (!GameEventManager.instance) return;
         GameEventManager.instance.uiEvents.AddSouvenirToList += AddSouvenir;
@@ -18,8 +19,8 @@ public class DisplaySouvenirs : MonoBehaviour
     {
         foreach (var slot in slots)
         {
-            if (slot.isActiveAndEnabled) continue;  // Find an inactive slot
-            ShowSlot(slot, sr);                     // and fill it
+            if (slot.sprite != emptySlot) continue;  // Find an inactive slot
+            AddSouvenir(slot, sr);                     // and fill it
             return;
         }
     }
@@ -28,31 +29,31 @@ public class DisplaySouvenirs : MonoBehaviour
     {
         foreach (var slot in slots)
         {
-            if (!slot.isActiveAndEnabled) continue; // Find an active slot,
+            if (slot.sprite == emptySlot) continue; // Find an active slot,
             if (slot.color != sr.color) continue; // compare its sprite to that of the provided component
-            HideSlot(slot);                         // and hide it
+            RemoveSouvenir(slot);                         // and hide it
             return;
         }
     }
 
 
-    private void HideSlot(Image slot)
+    private void RemoveSouvenir(Image slot)
     {
-        slot.gameObject.SetActive(false);
+        slot.sprite = emptySlot;
+        slot.color = Color.white;
     }
 
-    private void ShowSlot(Image slot, SpriteRenderer sr)
+    private void AddSouvenir(Image slot, SpriteRenderer sr)
     {
         slot.sprite = sr.sprite;
         slot.color = sr.color;
-        slot.gameObject.SetActive(true);
     }
 
-    private void HideAllSlots()
+    private void Initialize()
     {
         foreach (var slot in slots)
         {
-            slot.gameObject.SetActive(false);
+            slot.sprite = emptySlot;
         }
     }
 }

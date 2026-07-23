@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1361753671325362431}
   - component: {fileID: 3480169388736831890}
   - component: {fileID: 8132748336282969137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1121054271554850567}
   - component: {fileID: 6344758418400042892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
