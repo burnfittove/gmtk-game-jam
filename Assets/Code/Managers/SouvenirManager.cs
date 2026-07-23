@@ -21,7 +21,10 @@ public class SouvenirManager : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Debug.LogError("There are multiple instances of Souvenir Manager!");
+            Debug.LogError(
+                "There are multiple instances of Souvenir Manager!"
+            );
+
             gameObject.SetActive(false);
             return;
         }
@@ -37,8 +40,13 @@ public class SouvenirManager : MonoBehaviour
     {
         if (GameEventManager.instance != null)
         {
-            GameEventManager.instance.souvenirEvents.AddSouvenir += AddSouvenir;
-            GameEventManager.instance.souvenirEvents.RemoveSouvenir += RemoveSouvenir;
+            GameEventManager.instance
+                .souvenirEvents
+                .AddSouvenir += AddSouvenir;
+
+            GameEventManager.instance
+                .souvenirEvents
+                .RemoveSouvenir += RemoveSouvenir;
         }
 
         RefreshUI();
@@ -48,8 +56,13 @@ public class SouvenirManager : MonoBehaviour
     {
         if (GameEventManager.instance != null)
         {
-            GameEventManager.instance.souvenirEvents.AddSouvenir -= AddSouvenir;
-            GameEventManager.instance.souvenirEvents.RemoveSouvenir -= RemoveSouvenir;
+            GameEventManager.instance
+                .souvenirEvents
+                .AddSouvenir -= AddSouvenir;
+
+            GameEventManager.instance
+                .souvenirEvents
+                .RemoveSouvenir -= RemoveSouvenir;
         }
 
         if (instance == this)
@@ -62,17 +75,25 @@ public class SouvenirManager : MonoBehaviour
     {
         if (souvenir == null)
         {
-            Debug.LogWarning("[SouvenirManager] AddSouvenir dobio NULL!");
+            Debug.LogWarning(
+                "[SouvenirManager] AddSouvenir dobio NULL!"
+            );
+
             return;
         }
 
         if (IsSouvenirCollected(souvenir))
         {
-            Debug.Log("[SouvenirManager] Souvenir je već skupljen: " + souvenir.name);
+            Debug.Log(
+                "[SouvenirManager] Souvenir je već skupljen: "
+                + souvenir.name
+            );
+
             return;
         }
 
-        SpriteRenderer spriteRenderer = FindSouvenirRenderer(souvenir);
+        SpriteRenderer spriteRenderer =
+            FindSouvenirRenderer(souvenir);
 
         if (spriteRenderer == null)
         {
@@ -107,31 +128,43 @@ public class SouvenirManager : MonoBehaviour
 
         if (emptySlot == -1)
         {
-            Debug.LogWarning("[SouvenirManager] Souvenir lista je puna!");
+            Debug.LogWarning(
+                "[SouvenirManager] Souvenir lista je puna!"
+            );
+
             return;
         }
 
+        // Spremi GameObject
         souvenirs[emptySlot] = souvenir;
 
         // Spremi sprite
-        souvenirSprites[emptySlot] = spriteRenderer.sprite;
+        souvenirSprites[emptySlot] =
+            spriteRenderer.sprite;
 
-        // Spremi boju sa SpriteRenderera
-        souvenirColors[emptySlot] = spriteRenderer.color;
+        // Spremi boju
+        souvenirColors[emptySlot] =
+            spriteRenderer.color;
 
         Debug.Log(
-            "[SouvenirManager] Dodan: " +
-            souvenir.name +
-            " | Sprite: " +
-            spriteRenderer.sprite.name +
-            " | Color: " +
-            spriteRenderer.color
+            "[SouvenirManager] Dodan: "
+            + souvenir.name
+            + " | Slot: "
+            + emptySlot
+            + " | Sprite: "
+            + spriteRenderer.sprite.name
+            + " | Color: "
+            + spriteRenderer.color
         );
 
         RefreshUI();
 
+        // Ako postoji barem jedan prazan slot,
+        // lista još nije puna
         if (souvenirs.Any(s => s == null))
+        {
             return;
+        }
 
         if (GameEventManager.instance != null)
         {
@@ -145,33 +178,69 @@ public class SouvenirManager : MonoBehaviour
 
     private void RemoveSouvenir()
     {
-        int slotToRemove = -1;
+        /*
+         * PROMIJENJENA JE SAMO LOGIKA OVE METODE.
+         *
+         * Umjesto uklanjanja zadnjeg souvenira,
+         * nasumično pokušavamo pronaći jedan
+         * postojeći souvenir.
+         */
 
-        for (int i = souvenirs.Length - 1; i >= 0; i--)
+        // Ako nema nijednog souvenira, prekini.
+        if (souvenirs.All(s => s == null))
         {
-            if (souvenirs[i] != null)
-            {
-                slotToRemove = i;
-                break;
-            }
-        }
+            Debug.Log(
+                "[SouvenirManager] Nema souvenira za ukloniti."
+            );
 
-        if (slotToRemove == -1)
-        {
-            Debug.Log("[SouvenirManager] Nema souvenira za ukloniti.");
             return;
         }
 
-        souvenirs[slotToRemove] = null;
-        souvenirSprites[slotToRemove] = null;
+        int randomSlot;
 
-        // Reset boje
-        souvenirColors[slotToRemove] = Color.white;
+        /*
+         * Odaberi nasumični index.
+         *
+         * Ako slučajno odaberemo prazan slot,
+         * ponavljamo sve dok ne pronađemo
+         * slot koji sadrži souvenir.
+         */
+        do
+        {
+            randomSlot =
+                Random.Range(
+                    0,
+                    souvenirs.Length
+                );
 
+        } while (souvenirs[randomSlot] == null);
+
+        Debug.Log(
+            "[SouvenirManager] Uklonjen nasumični souvenir: "
+            + souvenirs[randomSlot].name
+            + " | Slot: "
+            + randomSlot
+        );
+
+        // Makni GameObject
+        souvenirs[randomSlot] = null;
+
+        // Makni njegov sprite iz UI podataka
+        souvenirSprites[randomSlot] = null;
+
+        // Resetiraj njegovu boju
+        souvenirColors[randomSlot] =
+            Color.white;
+
+        // Osvježi UI
         RefreshUI();
 
+        // Ako lista prije nije bila kompletna,
+        // ne treba slati incomplete event.
         if (!_isSouvenirsCollected)
+        {
             return;
+        }
 
         if (GameEventManager.instance != null)
         {
@@ -183,15 +252,21 @@ public class SouvenirManager : MonoBehaviour
         _isSouvenirsCollected = false;
     }
 
-    private SpriteRenderer FindSouvenirRenderer(GameObject souvenir)
+    private SpriteRenderer FindSouvenirRenderer(
+        GameObject souvenir
+    )
     {
         SpriteRenderer[] renderers =
-            souvenir.GetComponentsInChildren<SpriteRenderer>(true);
+            souvenir.GetComponentsInChildren<SpriteRenderer>(
+                true
+            );
 
         if (renderers.Length == 0)
+        {
             return null;
+        }
 
-        // Prvo pokušaj pronaći renderer koji nije "Circle"
+        // Prvo traži sprite koji nije Circle
         foreach (SpriteRenderer renderer in renderers)
         {
             if (renderer == null)
@@ -200,17 +275,26 @@ public class SouvenirManager : MonoBehaviour
             if (renderer.sprite == null)
                 continue;
 
-            if (renderer.sprite.name.ToLower().Contains("circle"))
+            if (
+                renderer.sprite.name
+                    .ToLower()
+                    .Contains("circle")
+            )
+            {
                 continue;
+            }
 
             return renderer;
         }
 
-        // Ako postoji samo Circle ili sličan sprite,
-        // vrati prvi validni renderer
+        // Ako postoji samo Circle,
+        // uzmi prvi validni SpriteRenderer
         foreach (SpriteRenderer renderer in renderers)
         {
-            if (renderer != null && renderer.sprite != null)
+            if (
+                renderer != null &&
+                renderer.sprite != null
+            )
             {
                 return renderer;
             }
@@ -241,8 +325,21 @@ public class SouvenirManager : MonoBehaviour
         return souvenirCount;
     }
 
-    private bool IsSouvenirCollected(GameObject souvenir)
+    private bool IsArrayEmpty()
     {
-        return souvenirs.Any(s => s == souvenir);
+        return souvenirs.All(
+            souvenir =>
+                souvenir == null
+        );
+    }
+
+    private bool IsSouvenirCollected(
+        GameObject souvenir
+    )
+    {
+        return souvenirs.Any(
+            collected =>
+                collected == souvenir
+        );
     }
 }
