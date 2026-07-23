@@ -42,7 +42,7 @@ namespace Code.Managers
             
             Timer -= Time.deltaTime;
 
-            if (Mathf.FloorToInt(Timer) % 10 == 0 && !_isWarned) PlayTenSecondWarning();
+            if (Timer < 11 && !_isWarned) PlayTenSecondWarning();
             
             if (Timer > 0) return;
             GameEventManager.instance.timerEvents.OnTimerExpired();

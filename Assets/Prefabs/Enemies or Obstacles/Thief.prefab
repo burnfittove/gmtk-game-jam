@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8634073400154977159}
   - component: {fileID: 229886839689523539}
   - component: {fileID: 4480417984666932962}
+  - component: {fileID: -4799642000427803134}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8634073400154977159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +145,8 @@ MonoBehaviour:
   movementCooldownTimer: 2
   movementTimer: 2.5
   randomAddedRange: {x: -0.2, y: 1}
-  chasingMovementSpeed: 5.5
+  chasingMovementSpeed: 6.5
+  chaseEmptyPlayer: 0
   OnTouchPlayer:
     m_PersistentCalls:
       m_Calls:
@@ -172,6 +174,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc68dae26122bfe5080c8243f4d7e5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStateController
+--- !u!61 &-4799642000427803134
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762411659031720884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 0.7}
+  m_EdgeRadius: 0
 --- !u!1 &5520813148198339419
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +299,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 802733144904376193, guid: d9deb202ce4a946ba98d8c90fd32e87e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
