@@ -2,13 +2,24 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(EnemyStateController))]
 public class EnemyController : MonoBehaviour
 {
     private EnemyStateController _esc;
+    [Header("Detection Radius")]
     public float detectionRadius;
-    public float detectionRadiusBuffer;
+    [HideInInspector] public float detectionRadiusBuffer;
+    [Tooltip("This value divides Time.deltaTime, so the bigger it is, the smaller the decrease /s")] public int detectionRadiusDecreaseDivider;
     public LayerMask detectionMask;
-    public UnityEvent OnTouchPlayer;
+    [Header("Roaming State Values")]    // Most values here and bellow are used by states
+    public float roamingMovementSpeed;
+    public float movementCooldownTimer;
+    public float movementTimer;
+    public Vector2 randomAddedRange;
+    [Header("Chasing State Values")]
+    public float chasingMovementSpeed;
+    [Header("OnTouch Action")]
+    public UnityEvent OnTouchPlayer;    // In the inspector, add a method from another script to this field
     private Rigidbody2D _rb;
     private Collider2D[] _colliders;
 
@@ -29,7 +40,7 @@ public class EnemyController : MonoBehaviour
     {
         if (_esc.currentState == _esc.chasingState) return;
         detectionRadiusBuffer += Time.deltaTime;
-        detectionRadiusBuffer = Mathf.Clamp(detectionRadiusBuffer, 0.0f, detectionRadius);
+        detectionRadiusBuffer = Mathf.Clamp(detectionRadiusBuffer, detectionRadius / 2, detectionRadius);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -20,7 +20,7 @@ namespace Code.Enemies.States
         {
             CheckStateChange();
             ec.MoveEnemy(ec.GetPlayerPosition(), movementSpeed);
-            ec.detectionRadiusBuffer -= Time.deltaTime / 3;
+            ec.detectionRadiusBuffer -= Time.deltaTime / ec.detectionRadiusDecreaseDivider;
         }
 
         public override void OnExitState()

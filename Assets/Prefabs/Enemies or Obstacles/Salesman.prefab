@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 229886839689523539}
   - component: {fileID: 4480417984666932962}
   m_Layer: 0
-  m_Name: Thief
+  m_Name: Salesman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.20784314, g: 0.09732588, b: 0.027450984, a: 1}
+  m_Color: {r: 0.120772526, g: 0.14119798, b: 0.4339623, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -193,17 +193,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62d52380e6d3153b9d72297010036d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  detectionRadius: 4
+  detectionRadius: 5
   detectionRadiusBuffer: 0
-  detectionRadiusDecreaseDivider: 2
+  detectionRadiusDecreaseDivider: 5
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
-  roamingMovementSpeed: 5
-  movementCooldownTimer: 2
-  movementTimer: 2.5
-  randomAddedRange: {x: -0.2, y: 1}
-  chasingMovementSpeed: 12
+  roamingMovementSpeed: 10
+  movementCooldownTimer: 0.3
+  movementTimer: 0.8
+  randomAddedRange: {x: -0.1, y: 0.2}
+  chasingMovementSpeed: 10
   OnTouchPlayer:
     m_PersistentCalls:
       m_Calls:

@@ -1,7 +1,7 @@
-using System;
 using Code.Enemies.States;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyController))]
 public class EnemyStateController : MonoBehaviour
 {
     private EnemyController ec;
@@ -9,16 +9,12 @@ public class EnemyStateController : MonoBehaviour
     public BaseState roamingState;
     public BaseState chasingState;
     public BaseState celebratingState;
-    public float roamingMovementCooldownTimer;
-    public float roamingMovementTimer;
-    public float roamingMovementSpeed;
-    public float chasingMovementSpeed;
 
     private void Awake()
     {
         ec = GetComponent<EnemyController>();
-        roamingState = new RoamingState(ec, this, roamingMovementSpeed, roamingMovementCooldownTimer, roamingMovementTimer);
-        chasingState = new ChasingState(ec, this, chasingMovementSpeed);
+        roamingState = new RoamingState(ec, this, ec.roamingMovementSpeed, ec.movementCooldownTimer, ec.movementTimer);
+        chasingState = new ChasingState(ec, this, ec.chasingMovementSpeed);
         celebratingState = new CelebratingState(ec, this);
     }
 
@@ -30,7 +26,6 @@ public class EnemyStateController : MonoBehaviour
     private void Update()
     {
         currentState?.OnUpdateState();
-        Debug.Log(currentState?.GetType());
     }
 
     public void ChangeState(BaseState newState)

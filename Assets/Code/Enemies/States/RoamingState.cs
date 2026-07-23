@@ -47,8 +47,8 @@ public class RoamingState : BaseState
     private void Initialize()
     {
         randomDirection = GetRandomDirection(); // Set the random direction beforehand, so that it doesn't constantly change later
-        var randomCooldownBonus = Random.Range(-.2f, 1.7f); // Add/Remove anywhere from -0.2 to 1.7 seconds of extra time
-        var randomBonus = Random.Range(-.2f, 1.7f); // Add/Remove anywhere from -0.2 to 1.7 seconds of extra time
+        var randomCooldownBonus = Random.Range(ec.randomAddedRange.x, ec.randomAddedRange.y); // Add/Remove anywhere from range
+        var randomBonus = Random.Range(ec.randomAddedRange.x, ec.randomAddedRange.y); // Add/Remove anywhere from range
         movementCooldownTimerBuffer = movementCooldownTimer + randomCooldownBonus;
         movementTimerBuffer = movementTimer + randomBonus;
     }
