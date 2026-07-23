@@ -19,6 +19,7 @@ public class CelebratingState : BaseState
     {
         CheckStateChange();
         timerBuffer -= Time.deltaTime;
+        ec.MoveEnemy(Vector2.zero, 1); // Keep them in place
     }
 
     public override void OnFixedUpdateState()
