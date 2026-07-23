@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   detectionRadius: 5
   detectionRadiusBuffer: 0
-  detectionRadiusDecreaseDivider: 5
+  detectionRadiusDecreaseDivider: 3
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
@@ -192,6 +192,7 @@ MonoBehaviour:
   movementTimer: 0.8
   randomAddedRange: {x: -0.1, y: 0.2}
   chasingMovementSpeed: 4
+  chaseEmptyPlayer: 1
   OnTouchPlayer:
     m_PersistentCalls:
       m_Calls:

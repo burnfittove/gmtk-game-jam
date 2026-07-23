@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     public Vector2 randomAddedRange;
     [Header("Chasing State Values")]
     public float chasingMovementSpeed;
+    public bool chaseEmptyPlayer;
     [Header("OnTouch Action")]
     public UnityEvent OnTouchPlayer;    // In the inspector, add a method from another script to this field
     private Rigidbody2D _rb;
@@ -46,6 +47,7 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Player")) return; // If not player, return
+        if (_esc.currentState !=_esc.chasingState) return;
         _esc.ChangeState(_esc.celebratingState);
         OnTouchPlayer?.Invoke();
     }

@@ -80,7 +80,7 @@ public class SouvenirManager : MonoBehaviour
         return souvenirCount;
     }
 
-    private bool IsArrayEmpty()
+    public bool IsArrayEmpty()
     {
         return souvenirs.All(s => !s);
     }
