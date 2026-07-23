@@ -23,6 +23,11 @@ namespace Code.Enemies.States
             ec.detectionRadiusBuffer -= Time.deltaTime / ec.detectionRadiusDecreaseDivider;
         }
 
+        public override void OnFixedUpdateState()
+        {
+            return;
+        }
+
         public override void OnExitState()
         {
             return;

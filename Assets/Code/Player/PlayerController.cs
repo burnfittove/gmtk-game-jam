@@ -19,10 +19,9 @@ public class PlayerController : MonoBehaviour
         GameEventManager.instance.inputEvents.Move += Move;
     }
 
-    // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
-        if (_movementDirection != Vector2.zero) _rb.MovePosition(_rb.position + _movementDirection * (speed * Time.deltaTime));
+        if (_movementDirection != Vector2.zero) _rb.MovePosition(_rb.position + _movementDirection * (speed * Time.fixedDeltaTime));
     }
 
     private void Move(InputAction.CallbackContext ctx)

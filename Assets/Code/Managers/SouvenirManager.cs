@@ -1,4 +1,5 @@
 using System.Linq;
+using NUnit.Framework;
 using UnityEngine;
 
 public class SouvenirManager : MonoBehaviour
@@ -55,6 +56,8 @@ public class SouvenirManager : MonoBehaviour
 
     private void RemoveSouvenir()
     {
+        if (IsArrayEmpty()) return;
+        
         int randomSlot;
         do
         {

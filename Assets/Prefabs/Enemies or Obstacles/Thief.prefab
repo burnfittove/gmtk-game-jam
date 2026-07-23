@@ -199,11 +199,11 @@ MonoBehaviour:
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
-  roamingMovementSpeed: 5
+  roamingMovementSpeed: 2
   movementCooldownTimer: 2
   movementTimer: 2.5
   randomAddedRange: {x: -0.2, y: 1}
-  chasingMovementSpeed: 12
+  chasingMovementSpeed: 5.5
   OnTouchPlayer:
     m_PersistentCalls:
       m_Calls:

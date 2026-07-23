@@ -187,11 +187,11 @@ MonoBehaviour:
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
-  roamingMovementSpeed: 10
+  roamingMovementSpeed: 3
   movementCooldownTimer: 0.3
   movementTimer: 0.8
   randomAddedRange: {x: -0.1, y: 0.2}
-  chasingMovementSpeed: 10
+  chasingMovementSpeed: 4
   OnTouchPlayer:
     m_PersistentCalls:
       m_Calls:

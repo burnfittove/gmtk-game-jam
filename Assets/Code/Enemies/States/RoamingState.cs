@@ -28,10 +28,16 @@ public class RoamingState : BaseState
         movementCooldownTimerBuffer -= Time.deltaTime;  // Decrease cooldown timer
         if (movementCooldownTimerBuffer > 0) return;    // If the timer is not 0, return
         
-        ec.MoveEnemy(randomDirection, movementSpeed);   // Move in the previously chosen direction
+        
         movementTimerBuffer -= Time.deltaTime;  // Decrease the movement timer
         if (movementTimerBuffer > 0) return;    // If the timer is above 0, return and keep moving
         Initialize();    // Once it's done, reset both timers
+    }
+
+    public override void OnFixedUpdateState()
+    {
+        if (movementCooldownTimerBuffer > 0) return;
+        ec.MoveEnemy(randomDirection, movementSpeed);   // Move in the previously chosen direction
     }
 
     public override void OnExitState()

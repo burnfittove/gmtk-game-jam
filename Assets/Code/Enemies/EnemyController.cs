@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour
 
     public void MoveEnemy(Vector2 direction, float movementSpeed)
     {
-        _rb.MovePosition(_rb.position + direction.normalized * (movementSpeed * Time.deltaTime));
+        _rb.MovePosition(_rb.position + direction.normalized * (movementSpeed * Time.fixedDeltaTime));
     }
 
     public Vector2 GetPlayerPosition()

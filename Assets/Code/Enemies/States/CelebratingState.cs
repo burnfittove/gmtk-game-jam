@@ -21,6 +21,11 @@ public class CelebratingState : BaseState
         timerBuffer -= Time.deltaTime;
     }
 
+    public override void OnFixedUpdateState()
+    {
+        return;
+    }
+
     public override void OnExitState()
     {
         return;

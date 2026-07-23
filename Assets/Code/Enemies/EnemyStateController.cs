@@ -1,3 +1,4 @@
+using System;
 using Code.Enemies.States;
 using UnityEngine;
 
@@ -26,6 +27,11 @@ public class EnemyStateController : MonoBehaviour
     private void Update()
     {
         currentState?.OnUpdateState();
+    }
+
+    private void FixedUpdate()
+    {
+        currentState?.OnFixedUpdateState();
     }
 
     public void ChangeState(BaseState newState)
