@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyStateController : MonoBehaviour
 {
     private EnemyController ec;
-    private BaseState currentState;
+    public BaseState currentState;
     public BaseState roamingState;
     public BaseState chasingState;
+    public BaseState celebratingState;
     public float roamingMovementCooldownTimer;
     public float roamingMovementTimer;
     public float roamingMovementSpeed;
@@ -18,20 +19,21 @@ public class EnemyStateController : MonoBehaviour
         ec = GetComponent<EnemyController>();
         roamingState = new RoamingState(ec, this, roamingMovementSpeed, roamingMovementCooldownTimer, roamingMovementTimer);
         chasingState = new ChasingState(ec, this, chasingMovementSpeed);
+        celebratingState = new CelebratingState(ec, this);
     }
 
     private void Start()
     {
-        if (currentState == null) UpdateState(roamingState);
+        if (currentState == null) ChangeState(roamingState);
     }
 
     private void Update()
     {
         currentState?.OnUpdateState();
-        Debug.Log(currentState);
+        Debug.Log(currentState?.GetType());
     }
 
-    public void UpdateState(BaseState newState)
+    public void ChangeState(BaseState newState)
     {
         currentState?.OnExitState();
         currentState = newState;

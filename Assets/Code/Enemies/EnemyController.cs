@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     private EnemyStateController _esc;
     public float detectionRadius;
+    public float detectionRadiusBuffer;
     public LayerMask detectionMask;
     public UnityEvent OnTouchPlayer;
     private Rigidbody2D _rb;
@@ -14,16 +16,26 @@ public class EnemyController : MonoBehaviour
     {
         _esc = GetComponent<EnemyStateController>();
         _rb = GetComponent<Rigidbody2D>();
+        
+        detectionRadiusBuffer = detectionRadius;
     }
 
     private void FixedUpdate()
     {
-       _colliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius, detectionMask);
+       _colliders = Physics2D.OverlapCircleAll(transform.position, detectionRadiusBuffer, detectionMask);
+    }
+
+    private void Update()
+    {
+        if (_esc.currentState == _esc.chasingState) return;
+        detectionRadiusBuffer += Time.deltaTime;
+        detectionRadiusBuffer = Mathf.Clamp(detectionRadiusBuffer, 0.0f, detectionRadius);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Player")) return; // If not player, return
+        _esc.ChangeState(_esc.celebratingState);
         OnTouchPlayer?.Invoke();
     }
 
@@ -42,10 +54,13 @@ public class EnemyController : MonoBehaviour
     {
         return _colliders.Length > 0;
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, detectionRadiusBuffer);
     }
 }

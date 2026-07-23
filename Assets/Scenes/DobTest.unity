@@ -659,7 +659,6 @@ GameObject:
   - component: {fileID: 1615345351}
   - component: {fileID: 1615345356}
   - component: {fileID: 1615345350}
-  - component: {fileID: 1615345349}
   - component: {fileID: 1615345355}
   - component: {fileID: 1615345354}
   m_Layer: 0
@@ -669,33 +668,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1615345349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615345348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41074f542819f1371aad19723a12a038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebugThiefTest
-  OnRemoveSouvenir:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1615345350}
-        m_TargetAssemblyTypeName: RemoveSouvenirFromList, Assembly-CSharp
-        m_MethodName: RemoveSouvenir
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1615345350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,7 +834,19 @@ MonoBehaviour:
     m_Bits: 128
   OnTouchPlayer:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1615345350}
+        m_TargetAssemblyTypeName: RemoveSouvenirFromList, Assembly-CSharp
+        m_MethodName: RemoveSouvenir
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &1615345356
 Rigidbody2D:
   serializedVersion: 5

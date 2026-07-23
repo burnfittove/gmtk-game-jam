@@ -23,7 +23,7 @@ public class RoamingState : BaseState
 
     public override void OnUpdateState()
     {
-        ChangeState();  // Check conditions
+        CheckStateChange();  // Check conditions
         
         movementCooldownTimerBuffer -= Time.deltaTime;  // Decrease cooldown timer
         if (movementCooldownTimerBuffer > 0) return;    // If the timer is not 0, return
@@ -39,9 +39,9 @@ public class RoamingState : BaseState
         return;
     }
 
-    public override void ChangeState()
+    public override void CheckStateChange()
     {
-        if (ec.IsPlayerInRange()) esc.UpdateState(esc.chasingState);
+        if (ec.IsPlayerInRange()) esc.ChangeState(esc.chasingState);
     }
 
     private void Initialize()

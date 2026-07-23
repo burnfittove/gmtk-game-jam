@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Code.Enemies.States
 {
     public class ChasingState : BaseState
@@ -16,8 +18,9 @@ namespace Code.Enemies.States
 
         public override void OnUpdateState()
         {
-            ChangeState();
+            CheckStateChange();
             ec.MoveEnemy(ec.GetPlayerPosition(), movementSpeed);
+            ec.detectionRadiusBuffer -= Time.deltaTime / 3;
         }
 
         public override void OnExitState()
@@ -25,9 +28,9 @@ namespace Code.Enemies.States
             return;
         }
 
-        public override void ChangeState()
+        public override void CheckStateChange()
         {
-            if (!ec.IsPlayerInRange()) esc.UpdateState(esc.roamingState);
+            if (!ec.IsPlayerInRange()) esc.ChangeState(esc.roamingState);
         }
     }
 }
