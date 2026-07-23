@@ -8,6 +8,7 @@ public class GameEventManager : MonoBehaviour
     public SceneEvents sceneEvents;
     public SouvenirEvents souvenirEvents;
     public TimerEvents timerEvents;
+    public UIEvents uiEvents;
     public MiscellaneousEvents miscellaneousEvents;
 
     private void Awake()
@@ -24,6 +25,7 @@ public class GameEventManager : MonoBehaviour
         sceneEvents = new SceneEvents();
         souvenirEvents = new SouvenirEvents();
         timerEvents = new TimerEvents();
+        uiEvents = new UIEvents();
         miscellaneousEvents = new MiscellaneousEvents();
     }
 

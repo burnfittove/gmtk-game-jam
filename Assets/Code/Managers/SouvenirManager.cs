@@ -32,11 +32,15 @@ public class SouvenirManager : MonoBehaviour
     {
         // Check if the souvenir is already in the list
         if (IsSouvenirCollected(souvenir)) return;
-        
+            
         for (var i = 0; i < souvenirCount; i++)
         {
             if (souvenirs[i]) continue; // If the slot is not null, continue
-            souvenirs[i] = souvenir;    // Otherwise, add the souvenir to the empty slot
+            souvenirs[i] = souvenir;                            // Otherwise, add the souvenir to the empty slot
+            souvenir.TryGetComponent(out SpriteRenderer sr);    // and get the SpriteRenderer
+            if (!sr) continue;
+            if (!GameEventManager.instance) return;
+            GameEventManager.instance.uiEvents.OnAddSouvenirToList(sr); // Pass the SpriteRenderer to DisplaySouvenirs
             break;
         }
 
@@ -54,7 +58,11 @@ public class SouvenirManager : MonoBehaviour
         for (var i = 0; i < souvenirCount; i++)
         {
             if (!souvenirs[i]) continue;
-            souvenirs.SetValue(null, i);
+            souvenirs[i].TryGetComponent(out SpriteRenderer sr);    // Check for SpriteRenderer component
+            if (!sr) continue;
+            if (!GameEventManager.instance) return;
+            GameEventManager.instance.uiEvents.OnRemoveSouvenirFromList(sr);    // Pass the SpriteRenderer to DisplaySouvenirs for sprite comparison
+            souvenirs.SetValue(null, i);    // Remove souvenir from list
             break;
         }
 
