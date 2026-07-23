@@ -55,16 +55,17 @@ public class SouvenirManager : MonoBehaviour
 
     private void RemoveSouvenir()
     {
-        for (var i = 0; i < souvenirCount; i++)
+        int randomSlot;
+        do
         {
-            if (!souvenirs[i]) continue;
-            souvenirs[i].TryGetComponent(out SpriteRenderer sr);    // Check for SpriteRenderer component
-            if (!sr) continue;
-            if (!GameEventManager.instance) return;
-            GameEventManager.instance.uiEvents.OnRemoveSouvenirFromList(sr);    // Pass the SpriteRenderer to DisplaySouvenirs for sprite comparison
-            souvenirs.SetValue(null, i);    // Remove souvenir from list
-            break;
-        }
+            randomSlot = Random.Range(0, souvenirs.Length);
+        } while (!souvenirs[randomSlot]);
+        
+        souvenirs[randomSlot].TryGetComponent(out SpriteRenderer sr);    // Check for SpriteRenderer component
+        if (!sr) return;    // Failsafe
+        if (!GameEventManager.instance) return;
+        GameEventManager.instance.uiEvents.OnRemoveSouvenirFromList(sr);    // Pass the SpriteRenderer to DisplaySouvenirs for sprite comparison
+        souvenirs.SetValue(null, randomSlot);   // Remove souvenir from list
 
         if (!_isSouvenirsCollected) return;
         if (!GameEventManager.instance) return;

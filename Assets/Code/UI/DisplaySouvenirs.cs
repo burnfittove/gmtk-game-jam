@@ -14,22 +14,6 @@ public class DisplaySouvenirs : MonoBehaviour
         GameEventManager.instance.uiEvents.RemoveSouvenirFromList += RemoveSouvenir;
     }
 
-    // private void UpdateUI()
-    // {
-    //     for (var i = 0; i < SouvenirManager.instance.souvenirCount; i++)
-    //     {
-    //         if (!SouvenirManager.instance.souvenirs[i])
-    //         {
-    //             HideSlot(slots[i]);
-    //             continue;
-    //         }
-    //
-    //         SouvenirManager.instance.souvenirs[i].TryGetComponent(out SpriteRenderer sr);
-    //         if (!sr) continue;
-    //         ShowSlot(slots[i], sr);
-    //     }
-    // }
-
     private void AddSouvenir(SpriteRenderer sr)
     {
         foreach (var slot in slots)
@@ -45,7 +29,7 @@ public class DisplaySouvenirs : MonoBehaviour
         foreach (var slot in slots)
         {
             if (!slot.isActiveAndEnabled) continue; // Find an active slot,
-            if (slot.sprite != sr.sprite) continue; // compare its sprite to that of the provided component
+            if (slot.color != sr.color) continue; // compare its sprite to that of the provided component
             HideSlot(slot);                         // and hide it
             return;
         }
