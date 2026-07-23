@@ -1,8 +1,5 @@
-using System;
 using System.Linq;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class SouvenirManager : MonoBehaviour
 {
