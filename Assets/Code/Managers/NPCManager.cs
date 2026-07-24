@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 public class NPCManager : MonoBehaviour
 {
     private GameObject[] npcs;
-    public Sprite[] sprites;
+    public RuntimeAnimatorController[] animators;
 
     private void Start()
     {
@@ -14,10 +14,10 @@ public class NPCManager : MonoBehaviour
         
         foreach (var npc in npcs)
         {
-            npc.transform.GetChild(0).TryGetComponent(out SpriteRenderer spriteRenderer);
-            if (!spriteRenderer) continue;
-            var randomIndex = Random.Range(0, sprites.Length);
-            spriteRenderer.sprite = sprites[randomIndex];
+            npc.transform.GetChild(0).TryGetComponent(out Animator anim);
+            if (!anim) continue;
+            var randomIndex = Random.Range(0, animators.Length);
+            anim.runtimeAnimatorController = animators[randomIndex];
         }
     }
 }

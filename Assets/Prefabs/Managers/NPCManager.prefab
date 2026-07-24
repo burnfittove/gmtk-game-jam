@@ -44,14 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d86eaf04069f76bb04845815a81e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCManager
-  sprites:
-  - {fileID: -6959385605288792577, guid: 969af558ed36519f29be729b23adaf7e, type: 3}
-  - {fileID: 3448532829500829906, guid: 543369f9af8bfcdcaa7a43b447fce2a7, type: 3}
-  - {fileID: -7833841315966559439, guid: f67dc045c7db4b4e7b9555a06226c060, type: 3}
-  - {fileID: -1050266458402979078, guid: 72a7984379e779573bf09a5d27a51d0b, type: 3}
-  - {fileID: -4941185460401201282, guid: d0656ffc2aaeb510da9a21c97927a26a, type: 3}
-  - {fileID: 7246137438945903652, guid: 16e111bdb51f1c50f8f679c004a1cd9f, type: 3}
-  - {fileID: -1342581931310817854, guid: f764e9a71e417ba9c97e7045ffce633d, type: 3}
-  - {fileID: 2437611600210659666, guid: 855e31b57c2e12978b1d1721dd694467, type: 3}
-  - {fileID: -6348986152850496818, guid: 86489b2b22f78f4c49c8e98546b0e3a0, type: 3}
-  - {fileID: -4195806026366811058, guid: 8820b15495c5b2ab5b63bc794571c07e, type: 3}
+  animators:
+  - {fileID: 9100000, guid: 2d8d0f05f165eed2bb48b41b19ad215c, type: 2}
+  - {fileID: 9100000, guid: ccecbaad21ee9bdfdbc0ad279748a628, type: 2}
+  - {fileID: 9100000, guid: 4c3f79c93a1f1891d8dc0555c298f769, type: 2}
+  - {fileID: 9100000, guid: 30b5a589e8b51a05e851ae80fb37266a, type: 2}
+  - {fileID: 9100000, guid: b83d33621f5a6979aa07d0bf8f7ea278, type: 2}
+  - {fileID: 9100000, guid: f9928ecbac1f798b5a9a02833947011e, type: 2}
+  - {fileID: 9100000, guid: 596938a0b9d3376c1b51e3c214687886, type: 2}
+  - {fileID: 9100000, guid: acc16cc531fdd4892be199c22c723229, type: 2}
+  - {fileID: 9100000, guid: 43c9a9820a62f9cdf94fc7b8a0ebb39e, type: 2}
+  - {fileID: 9100000, guid: ac2072a2743b9446784e7ec5f227c597, type: 2}
