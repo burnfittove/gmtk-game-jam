@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 075ff2c0f2e1bbd3bbdfb53b68a52c03
+guid: e96845dc2108edf9b8cde650cb65ed11
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639205064699649480
+  platformSettingsDirtyTick: 639205095215988000
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: crowd
     originalName: 
-    pivot: {x: 0.5, y: -0.016129032}
+    pivot: {x: 0.50793654, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 64
-      height: 62
-    spriteID: 0cf3ad99875c1e3b09780a7862dbbc1e
+      width: 63
+      height: 63
+    spriteID: 4c724de7a989b9a78bcd08795be91811
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -168,10 +168,10 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 1
-        width: 64
-        height: 62
-      spriteId: 0cf3ad99875c1e3b09780a7862dbbc1e
+        y: 0
+        width: 63
+        height: 63
+      spriteId: 4c724de7a989b9a78bcd08795be91811
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
