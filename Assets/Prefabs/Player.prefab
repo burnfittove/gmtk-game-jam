@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 9
+  crowdSlowDown: 6
 --- !u!61 &-1082369839663414539
 BoxCollider2D:
   m_ObjectHideFlags: 0

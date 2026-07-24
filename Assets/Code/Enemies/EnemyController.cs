@@ -13,17 +13,20 @@ public class EnemyController : MonoBehaviour
     public LayerMask detectionMask;
     [Header("Roaming State Values")]    // Most values here and bellow are used by states
     public float roamingMovementSpeed;
+    public float roamingCrowdSlowDown;
     public float movementCooldownTimer;
     public float movementTimer;
     public Vector2 randomAddedRange;
     [Header("Chasing State Values")]
     public float chasingMovementSpeed;
+    public float chasingCrowdSlowDown;
     public bool chaseEmptyPlayer;
+    [HideInInspector] public bool isSlowedDown;
     [Header("OnTouch Action")]
     public UnityEvent OnTouchPlayer;    // In the inspector, add a method from another script to this field
     private Rigidbody2D _rb;
     private Collider2D[] _colliders;
-    public Animator animator;
+    [HideInInspector] public Animator animator;
 
     private void Awake()
     {
@@ -77,5 +80,16 @@ public class EnemyController : MonoBehaviour
         
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, detectionRadiusBuffer);
+    }
+
+    public void SlowDown()
+    {
+        if (_esc.currentState == _esc.celebratingState) return;
+        isSlowedDown = true;
+    }
+
+    public void ResetSpeed()
+    {
+        isSlowedDown = false;
     }
 }

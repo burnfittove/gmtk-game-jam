@@ -130,11 +130,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   roamingMovementSpeed: 6
+  roamingCrowdSlowDown: 3
   movementCooldownTimer: 0.2
   movementTimer: 0.5
   randomAddedRange: {x: -0.1, y: 0.2}
   chasingMovementSpeed: 6
+  chasingCrowdSlowDown: 2.5
   chaseEmptyPlayer: 1
+  isSlowedDown: 0
   OnTouchPlayer:
     m_PersistentCalls:
       m_Calls:
@@ -150,6 +153,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  animator: {fileID: 0}
 --- !u!114 &4480417984666932962
 MonoBehaviour:
   m_ObjectHideFlags: 0

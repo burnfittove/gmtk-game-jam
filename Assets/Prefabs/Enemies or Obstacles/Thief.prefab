@@ -143,11 +143,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   roamingMovementSpeed: 4
+  roamingCrowdSlowDown: 2
   movementCooldownTimer: 2
   movementTimer: 2.5
   randomAddedRange: {x: -0.2, y: 1}
   chasingMovementSpeed: 7
+  chasingCrowdSlowDown: 3.5
   chaseEmptyPlayer: 0
+  isSlowedDown: 0
   OnTouchPlayer:
     m_PersistentCalls:
       m_Calls:

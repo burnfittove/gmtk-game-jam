@@ -5,6 +5,7 @@ namespace Code.Enemies.States
     public class ChasingState : BaseState
     {
         private readonly float movementSpeed;
+        private float _movementSpeedBuffer;
         
         public ChasingState(EnemyController _ec, EnemyStateController _esc, float _movementSpeed) : base(_ec, _esc)
         {
@@ -20,13 +21,16 @@ namespace Code.Enemies.States
         public override void OnUpdateState()
         {
             CheckStateChange();
-            ec.MoveEnemy(ec.GetPlayerPosition(), movementSpeed);
+            
+            if (ec.isSlowedDown) _movementSpeedBuffer = movementSpeed - ec.chasingCrowdSlowDown;
+            else _movementSpeedBuffer = movementSpeed;
+            
             ec.detectionRadiusBuffer -= Time.deltaTime / ec.detectionRadiusDecreaseDivider;
         }
 
         public override void OnFixedUpdateState()
         {
-            return;
+            ec.MoveEnemy(ec.GetPlayerPosition(), _movementSpeedBuffer);
         }
 
         public override void OnExitState()

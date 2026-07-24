@@ -9,5 +9,19 @@ namespace Code.Events
         {
             QuitGame?.Invoke();
         }
+
+        public event Action SlowDown;
+
+        public void OnSlowDown()
+        {
+            SlowDown?.Invoke();
+        }
+        
+        public event Action SpeedUp;
+
+        public void OnSpeedUp()
+        {
+            SpeedUp?.Invoke();
+        }
     }
 }

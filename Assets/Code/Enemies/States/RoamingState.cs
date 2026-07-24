@@ -3,6 +3,7 @@ using UnityEngine;
 public class RoamingState : BaseState
 {
     private readonly float movementSpeed;
+    private float _movementSpeedBuffer;
     private readonly float movementCooldownTimer;
     private float movementCooldownTimerBuffer;
     private readonly float movementTimer;
@@ -14,6 +15,7 @@ public class RoamingState : BaseState
         movementSpeed = _movementSpeed;
         movementCooldownTimer = _movementCooldownTimer;
         movementTimer = _movementTimer;
+        _movementSpeedBuffer = _movementSpeed;
     }
 
     public override void OnEnterState()
@@ -24,6 +26,9 @@ public class RoamingState : BaseState
     public override void OnUpdateState()
     {
         CheckStateChange();  // Check conditions
+        
+        if (ec.isSlowedDown) _movementSpeedBuffer = movementSpeed - ec.roamingCrowdSlowDown;
+        else _movementSpeedBuffer = movementSpeed;
         
         movementCooldownTimerBuffer -= Time.deltaTime;  // Decrease cooldown timer
         if (movementCooldownTimerBuffer > 0) return;    // If the timer is not 0, return
@@ -65,5 +70,10 @@ public class RoamingState : BaseState
     private Vector2 GetRandomDirection()
     {
         return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+    }
+
+    private void SlowDown()
+    {
+        
     }
 }
