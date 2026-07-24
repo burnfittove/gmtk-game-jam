@@ -3,16 +3,11 @@ using UnityEngine.Events;
 
 public class Rocket : MonoBehaviour
 {
-    public UnityEvent OnAnimationEnd;
     public string nextScene;
 
-    public void AnimationEnd()
+    public void ChangeScene()
     {
-        OnAnimationEnd?.Invoke();
-    }
-
-    public void ChangeScene(string scene)
-    {
-        nextScene = scene;
+        if (!GameEventManager.instance) return;
+        GameEventManager.instance.sceneEvents.OnLoadScene(nextScene);
     }
 }

@@ -7,4 +7,16 @@ public class SceneEvents
     {
         LoadScene?.Invoke(sceneName);
     }
+    
+    // public event Action<string> FadeIn;
+    // public void OnFadeIn()
+    // {
+    //     FadeIn?.Invoke(null);
+    // }
+    //
+    // public event Action<string> FadeOut;
+    // public void OnFadeOut()
+    // {
+    //     FadeOut?.Invoke(null);
+    // }
 }

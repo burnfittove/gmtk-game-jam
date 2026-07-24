@@ -22,6 +22,11 @@ public class EnemyStateController : MonoBehaviour
     private void Start()
     {
         if (currentState == null) ChangeState(roamingState);
+        GameEventManager.instance.sceneEvents.LoadScene += _ =>
+        {
+            ChangeState(celebratingState);
+            enabled = false;
+        };
     }
 
     private void Update()
