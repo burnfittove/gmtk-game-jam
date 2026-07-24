@@ -14,15 +14,15 @@ public class SceneManager : MonoBehaviour
 
     private void Awake()
     {
+        imageTransitionObject.gameObject.SetActive(true);
+        
         if (_fadeOut)
         {
             imageTransitionObject.color = _alphaOne;
-            imageTransitionObject.gameObject.SetActive(true);
             return;
         }
         
         imageTransitionObject.color = _alphaZero;
-        imageTransitionObject.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -53,7 +53,6 @@ public class SceneManager : MonoBehaviour
     {
         _fadeIn = true;
         _sceneName = sceneName;
-        imageTransitionObject.gameObject.SetActive(true);
     }
     
     // private void FadeIn()

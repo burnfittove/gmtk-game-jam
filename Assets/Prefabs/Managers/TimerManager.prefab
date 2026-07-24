@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Code.Managers.TimerManager
   levelTimer: 0
   tenSecondWarning: {fileID: 8300000, guid: 3a820f70068307e2d9ca3755b03da70f, type: 3}
+  loseSceneName: Lose

@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototypes/Main Menu.unity
     guid: c0d38a09bb5ed1348bd26fe97106a87d
   - enabled: 1
+    path: Assets/Scenes/Prototypes/Lose.unity
+    guid: c3e07f2c0fb0dcf4f859468a07011d06
+  - enabled: 1
     path: Assets/Scenes/Prototypes/Intro.unity
     guid: 4d3dce01c95595f46b392b23cea8ff49
   - enabled: 1

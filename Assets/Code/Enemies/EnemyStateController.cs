@@ -1,4 +1,3 @@
-using System;
 using Code.Enemies.States;
 using UnityEngine;
 
@@ -14,19 +13,16 @@ public class EnemyStateController : MonoBehaviour
     private void Awake()
     {
         ec = GetComponent<EnemyController>();
-        roamingState = new RoamingState(ec, this, ec.roamingMovementSpeed, ec.movementCooldownTimer, ec.movementTimer);
-        chasingState = new ChasingState(ec, this, ec.chasingMovementSpeed);
-        celebratingState = new CelebratingState(ec, this);
     }
 
     private void Start()
     {
+        roamingState = new RoamingState(ec, this, ec.roamingMovementSpeed, ec.movementCooldownTimer, ec.movementTimer);
+        chasingState = new ChasingState(ec, this, ec.chasingMovementSpeed);
+        celebratingState = new CelebratingState(ec, this);
+        
         if (currentState == null) ChangeState(roamingState);
-        GameEventManager.instance.sceneEvents.LoadScene += _ =>
-        {
-            ChangeState(celebratingState);
-            enabled = false;
-        };
+        GameEventManager.instance.timerEvents.timerExpired += DisableStateMachine;
     }
 
     private void Update()
@@ -44,5 +40,11 @@ public class EnemyStateController : MonoBehaviour
         currentState?.OnExitState();
         currentState = newState;
         currentState?.OnEnterState();
+    }
+
+    private void DisableStateMachine()
+    {
+        ChangeState(roamingState);
+        enabled = false;
     }
 }

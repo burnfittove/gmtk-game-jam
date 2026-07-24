@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
     [Header("OnTouch Action")]
     public UnityEvent OnTouchPlayer;    // In the inspector, add a method from another script to this field
     private Rigidbody2D _rb;
-    private Collider2D[] _colliders;
+    public Collider2D[] _colliders = Array.Empty<Collider2D>();
     [HideInInspector] public Animator animator;
 
     private void Awake()
@@ -64,7 +64,7 @@ public class EnemyController : MonoBehaviour
 
     public Vector2 GetPlayerPosition()
     {
-        if (_colliders.Length == 0) return Vector2.zero;
+        if (_colliders == null || _colliders.Length == 0) return Vector2.zero;
         return _colliders[0].transform.position - transform.position;
     }
 

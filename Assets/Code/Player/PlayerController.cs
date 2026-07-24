@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         GameEventManager.instance.inputEvents.Move += Move;
         GameEventManager.instance.miscellaneousEvents.SlowDown += SlowDown;
         GameEventManager.instance.miscellaneousEvents.SpeedUp += ResetSpeed;
+        GameEventManager.instance.timerEvents.timerExpired += DisableMovementOnTimerExpiry;
     }
 
     private void FixedUpdate()
@@ -42,5 +43,10 @@ public class PlayerController : MonoBehaviour
     public void ResetSpeed()
     {
         _speed = speed;
+    }
+
+    private void DisableMovementOnTimerExpiry()
+    {
+        GameEventManager.instance.inputEvents.Move -= Move;
     }
 }
