@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
     private Vector2 _movementDirection;
     public float speed;
     private float _speed;
@@ -12,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
         _speed = speed;
     }
 
@@ -30,9 +35,15 @@ public class PlayerController : MonoBehaviour
         if (_movementDirection != Vector2.zero) _rb.MovePosition(_rb.position + _movementDirection * (_speed * Time.fixedDeltaTime));
     }
 
+    private void Update()
+    {
+        _animator.SetBool("isWalking", _movementDirection.magnitude > 0);
+    }
+
     private void Move(InputAction.CallbackContext ctx)
     {
         _movementDirection = ctx.ReadValue<Vector2>();
+        _spriteRenderer.flipX = _movementDirection.x < 0;
     }
 
     public void SlowDown()

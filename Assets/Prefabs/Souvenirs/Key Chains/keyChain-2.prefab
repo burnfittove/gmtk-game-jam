@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7542171215939779715}
   - component: {fileID: -5866047188503031131}
   m_Layer: 0
-  m_Name: keyChain-1
+  m_Name: keyChain-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3880568599510094012, guid: 89f84aefdf1d133d7a85ae965ebed757, type: 3}
+  m_Sprite: {fileID: -3508367885475953294, guid: d927f7fa6b0ec92f2a1b889c53940335, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
