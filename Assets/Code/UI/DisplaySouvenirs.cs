@@ -30,7 +30,7 @@ public class DisplaySouvenirs : MonoBehaviour
         foreach (var slot in slots)
         {
             if (slot.sprite == emptySlot) continue; // Find an active slot,
-            if (slot.color != sr.color) continue; // compare its sprite to that of the provided component
+            if (slot.sprite != sr.sprite) continue; // compare its sprite to that of the provided component
             RemoveSouvenir(slot);                         // and hide it
             return;
         }
