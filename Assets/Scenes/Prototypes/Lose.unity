@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &115644693
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6861533111522681611, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_Name
+      value: EVENTMANAGER
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892707536228442657, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6003a83ffcea30a8d969c065fd7ea571, type: 3}
 --- !u!1 &173362835
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +325,7 @@ GameObject:
   - component: {fileID: 241671611}
   - component: {fileID: 241671610}
   - component: {fileID: 241671609}
+  - component: {fileID: 241671612}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -338,7 +396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 241671610}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241671612}
+        m_TargetAssemblyTypeName: Code.UI.ChangeSceneButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &241671610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +447,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241671607}
   m_CullTransparentMesh: 1
+--- !u!114 &241671612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241671607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1002ebdcdf354ccc9e7e731ea6add97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.UI.ChangeSceneButton
+  nextSceneName: Level 1
 --- !u!1 &253111979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1102,7 @@ GameObject:
   - component: {fileID: 1759723696}
   - component: {fileID: 1759723695}
   - component: {fileID: 1759723694}
+  - component: {fileID: 1759723697}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1089,7 +1173,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1759723695}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1759723697}
+        m_TargetAssemblyTypeName: Code.UI.Quit, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1759723695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,6 +1224,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759723692}
   m_CullTransparentMesh: 1
+--- !u!114 &1759723697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759723692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76dfdde8434462886a52682509f627f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.UI.Quit
 --- !u!1 &1907308622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1248,7 @@ GameObject:
   - component: {fileID: 1907308626}
   - component: {fileID: 1907308625}
   - component: {fileID: 1907308624}
+  - component: {fileID: 1907308627}
   m_Layer: 5
   m_Name: Play (1)
   m_TagString: Untagged
@@ -1210,7 +1319,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1907308625}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1907308627}
+        m_TargetAssemblyTypeName: Code.UI.ChangeSceneButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1907308625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,6 +1370,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907308622}
   m_CullTransparentMesh: 1
+--- !u!114 &1907308627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907308622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1002ebdcdf354ccc9e7e731ea6add97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.UI.ChangeSceneButton
+  nextSceneName: Main Menu
 --- !u!1 &1956009723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,3 +1529,4 @@ SceneRoots:
   - {fileID: 1717758044}
   - {fileID: 253111983}
   - {fileID: 1090012571}
+  - {fileID: 115644693}
