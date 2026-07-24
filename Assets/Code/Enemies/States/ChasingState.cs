@@ -13,7 +13,8 @@ namespace Code.Enemies.States
 
         public override void OnEnterState()
         {
-            return;
+            if (!ec.animator) return;
+            ec.animator.SetBool("isChasing", true);
         }
 
         public override void OnUpdateState()
@@ -30,7 +31,8 @@ namespace Code.Enemies.States
 
         public override void OnExitState()
         {
-            return;
+            if (!ec.animator) return;
+            ec.animator.SetBool("isChasing", false);
         }
 
         public override void CheckStateChange()

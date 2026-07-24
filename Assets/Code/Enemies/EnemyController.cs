@@ -23,11 +23,13 @@ public class EnemyController : MonoBehaviour
     public UnityEvent OnTouchPlayer;    // In the inspector, add a method from another script to this field
     private Rigidbody2D _rb;
     private Collider2D[] _colliders;
+    public Animator animator;
 
     private void Awake()
     {
         _esc = GetComponent<EnemyStateController>();
         _rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         
         detectionRadiusBuffer = detectionRadius;
     }
