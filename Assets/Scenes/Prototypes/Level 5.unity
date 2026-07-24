@@ -12121,7 +12121,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1650227842475584734, guid: 68403d0968bf9102d845142142f6d89c, type: 3}
       propertyPath: levelTimer
-      value: 120
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2858948573261546473, guid: 68403d0968bf9102d845142142f6d89c, type: 3}
       propertyPath: m_LocalPosition.x
