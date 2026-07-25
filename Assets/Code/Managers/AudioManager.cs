@@ -16,7 +16,7 @@ namespace Code.Managers
         private void Start()
         {
             if (!GameEventManager.instance) return;
-            GameEventManager.instance.audioEvents.Play += PlayClip;
+            // GameEventManager.instance.audioEvents.Play += PlayClip;
         }
 
         private void PlayClip(AudioClip clip)

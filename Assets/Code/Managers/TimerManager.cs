@@ -10,7 +10,7 @@ namespace Code.Managers
         public AudioClip tenSecondWarning;
         private bool _isTimerActive;
         private bool _isTimerExpired;
-        private bool _isWarned;
+        public string loseSceneName;
 
         private void Awake()
         {
@@ -29,7 +29,7 @@ namespace Code.Managers
         {
             GameEventManager.instance.timerEvents.timerStart += StartTimer;
             GameEventManager.instance.timerEvents.timerUpdate += UpdateTimer;
-            // ##### DEBUG #####
+            // ##### DEBUG ##### oops not anymore, i kinda like this
             GameEventManager.instance.inputEvents.Move += _ => _isTimerActive = true;
         }
 
@@ -41,11 +41,11 @@ namespace Code.Managers
             if (_isTimerExpired) return;
             
             Timer -= Time.deltaTime;
-
-            if (Timer < 11 && !_isWarned) PlayTenSecondWarning();
             
             if (Timer > 0) return;
+            if (!GameEventManager.instance) return;
             GameEventManager.instance.timerEvents.OnTimerExpired();
+            GameEventManager.instance.sceneEvents.OnLoadScene(loseSceneName);
             _isTimerExpired = true;
         }
 
@@ -56,11 +56,11 @@ namespace Code.Managers
 
         public void StartTimer() => _isTimerActive = true;
 
-        private void PlayTenSecondWarning()
-        {
-            if (!GameEventManager.instance) return;
-            GameEventManager.instance.audioEvents.OnPlay(tenSecondWarning);
-            _isWarned = true;
-        }
+        // private void PlayTenSecondWarning()
+        // {
+        //     if (!GameEventManager.instance) return;
+        //     GameEventManager.instance.audioEvents.OnPlay(tenSecondWarning);
+        //     _isWarned = true;
+        // }
     }
 }

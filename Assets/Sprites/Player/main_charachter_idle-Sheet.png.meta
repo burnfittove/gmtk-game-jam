@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2c661ef5aa014894fa0fe531ca2bd0dd
+guid: 5bdc17e45794906d2b5e9475082cb5c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3007064861656362159
-    second: d4799fa769b6993cca28fd3aa18798f0--lord-of-the-rings-the-lord_0
+      213: -3417087847923824045
+    second: main_charachter_idle-Sheet_0
+  - first:
+      213: -6186670977968456035
+    second: main_charachter_idle-Sheet_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: d4799fa769b6993cca28fd3aa18798f0--lord-of-the-rings-the-lord_0
+      name: main_charachter_idle-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 625
-        height: 352
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fac269f3f8d3bb920800000000000000
-      internalID: 3007064861656362159
+      spriteID: 35a4232f4b01490d0800000000000000
+      internalID: -3417087847923824045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_charachter_idle-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9eb8ff1687842aa0800000000000000
+      internalID: -6186670977968456035
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6b7fb51339516aae5823ae1c373bbc38
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +158,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      d4799fa769b6993cca28fd3aa18798f0--lord-of-the-rings-the-lord_0: 3007064861656362159
+      main_charachter_idle-Sheet_0: -3417087847923824045
+      main_charachter_idle-Sheet_1: -6186670977968456035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
