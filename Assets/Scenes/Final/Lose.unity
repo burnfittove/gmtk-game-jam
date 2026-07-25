@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1002ebdcdf354ccc9e7e731ea6add97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Code.UI.ChangeSceneButton
-  nextSceneName: 0-1 Transition
+  nextSceneName: Intro-1 Trans
 --- !u!114 &1263247112
 MonoBehaviour:
   m_ObjectHideFlags: 0
