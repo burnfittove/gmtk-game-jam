@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,13 +27,14 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D _rb;
     public Collider2D[] _colliders = Array.Empty<Collider2D>();
     [HideInInspector] public Animator animator;
-    [SerializeField] private AudioSource audioSource; 
+    private AudioSource _audioSource;
  
     private void Awake()
     {
         _esc = GetComponent<EnemyStateController>();
         _rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         
         detectionRadiusBuffer = detectionRadius;
     }
@@ -57,7 +57,7 @@ public class EnemyController : MonoBehaviour
         if (_esc.currentState !=_esc.chasingState) return;
         _esc.ChangeState(_esc.celebratingState);
         OnTouchPlayer?.Invoke();
-        audioSource.Play();     
+        _audioSource.Play();     
     }
 
     public void MoveEnemy(Vector2 direction, float movementSpeed)

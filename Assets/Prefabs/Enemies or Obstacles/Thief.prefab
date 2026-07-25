@@ -143,10 +143,10 @@ MonoBehaviour:
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
-  roamingMovementSpeed: 4
+  roamingMovementSpeed: 6
   roamingCrowdSlowDown: 2
-  movementCooldownTimer: 2
-  movementTimer: 2.5
+  movementCooldownTimer: 0.2
+  movementTimer: 1
   randomAddedRange: {x: -0.2, y: 1}
   chasingMovementSpeed: 7
   chasingCrowdSlowDown: 3.5
@@ -198,7 +198,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
