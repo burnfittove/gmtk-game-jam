@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+    private ParticleSystem dustParticles;
     private Vector2 _movementDirection;
     public float speed;
     private float _speed;
     public float crowdSlowDown;
+    private Vector2 particlesStartPos;
 
     private void Awake()
     {
@@ -23,12 +25,14 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        particlesStartPos = dustParticles.transform.localPosition;
+    
         if (!GameEventManager.instance) return;
         GameEventManager.instance.inputEvents.Move += Move;
         GameEventManager.instance.miscellaneousEvents.SlowDown += SlowDown;
         GameEventManager.instance.miscellaneousEvents.SpeedUp += ResetSpeed;
         GameEventManager.instance.timerEvents.timerExpired += DisableMovementOnTimerExpiry;
-        GameEventManager.instance.sceneEvents.LoadScene += _ => DisableMovementOnTimerExpiry();
+        GameEventManager.instance.sceneEvents.LoadScene += _ => DisableMovementOnTimerExpiry();   
     }
 
     private void FixedUpdate()
@@ -46,6 +50,7 @@ public class PlayerController : MonoBehaviour
         _movementDirection = ctx.ReadValue<Vector2>();
         if (_movementDirection.x == 0) return;  // Disallow flipping if the player is moving just up or down
         _spriteRenderer.flipX = _movementDirection.x < 0;
+
     }
 
     public void SlowDown()
