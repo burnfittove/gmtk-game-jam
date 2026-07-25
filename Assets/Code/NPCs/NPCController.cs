@@ -25,6 +25,8 @@ public class NPCController : MonoBehaviour
     private void Start()
     {
         Initialize();
+        var chanceToMoveImmediately = Random.Range(0f, 1f);
+        if (chanceToMoveImmediately < .5f) movementCooldownTimerBuffer = 0;
     }
     
     private void Update()
