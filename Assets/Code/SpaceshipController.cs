@@ -1,14 +1,8 @@
-using System;
 using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
-    private Collider2D _trigger;
-
-    private void Awake()
-    {
-        _trigger = GetComponent<Collider2D>();
-    }
+    public Collider2D _trigger;
 
     private void Start()
     {
