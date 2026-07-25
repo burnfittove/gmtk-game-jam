@@ -5,27 +5,51 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/DobTestOld.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/Scenes/Prototypes/PrototypeLevel1.unity
-    guid: f086a92e4d533f3949ad16dac8e9361e
   - enabled: 1
     path: Assets/Scenes/Prototypes/Main Menu.unity
     guid: c0d38a09bb5ed1348bd26fe97106a87d
   - enabled: 1
-    path: Assets/Scenes/Prototypes/Lose.unity
-    guid: c3e07f2c0fb0dcf4f859468a07011d06
+    path: Assets/Scenes/Final/Intro.unity
+    guid: 9ad0021fecb262c139b1b07014ef6665
   - enabled: 1
-    path: Assets/Scenes/Prototypes/Intro.unity
-    guid: 4d3dce01c95595f46b392b23cea8ff49
-  - enabled: 1
-    path: Assets/Scenes/0-1 Transition.unity
+    path: Assets/Scenes/Final/Intro-1 Trans.unity
     guid: 9e618a05cdb9ef4268c05f5dc0d2fe2c
   - enabled: 1
-    path: Assets/Scenes/Prototypes/Level 1.unity
-    guid: 2a0f01fa0c7541a499e68d98c25dc339
+    path: Assets/Scenes/Final/Level 1.unity
+    guid: f467b717c4254c811b2d224c56e37e1c
+  - enabled: 1
+    path: Assets/Scenes/Final/1-2 Trans.unity
+    guid: 4eebe057b8ac93bb9ac18d2d2d2adb24
+  - enabled: 1
+    path: Assets/Scenes/Final/Level 2.unity
+    guid: 95aa246ef90f58e3d85c06a73f3b41ed
+  - enabled: 1
+    path: Assets/Scenes/Final/2-3 Trans.unity
+    guid: 8ef4f82c98b240908bf85dc742dabe05
+  - enabled: 1
+    path: Assets/Scenes/Final/Level 3.unity
+    guid: cb9c74d33c650cdad844873af3d80e37
+  - enabled: 1
+    path: Assets/Scenes/Final/3-4 Trans.unity
+    guid: 111d35f58944c9cd3a1e79dfe7f25bcf
+  - enabled: 1
+    path: Assets/Scenes/Final/Level 4.unity
+    guid: 82a73f68c2a4b013eaeef852488d759c
+  - enabled: 1
+    path: Assets/Scenes/Final/4-5 Trans.unity
+    guid: bfee315ee2961989cabe20ebd955dfc4
+  - enabled: 1
+    path: Assets/Scenes/Final/Level 5.unity
+    guid: 285a1ebb8ce1ec50584becaf6bc60fa8
+  - enabled: 1
+    path: Assets/Scenes/Final/5-End Trans.unity
+    guid: c899305d912412882a15e54347ce97a5
+  - enabled: 1
+    path: Assets/Scenes/Final/Victory.unity
+    guid: 5ba19ac76e5b75dd8abe7399f106ebf9
+  - enabled: 1
+    path: Assets/Scenes/Final/Lose.unity
+    guid: 422632473b7816ea9a2528e4d1c96ebe
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

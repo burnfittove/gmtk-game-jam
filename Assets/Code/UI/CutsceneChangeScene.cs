@@ -5,9 +5,6 @@ public class CutsceneChangeScene : MonoBehaviour
     [Header("Timer")]
     [SerializeField] private float timer = 5f;
 
-    [Header("Next Scene")]
-    [SerializeField] private string nextScene;
-
     [Header("Continue UI")]
     public GameObject continueButton;
 

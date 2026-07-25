@@ -213,8 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7a9941047e6ad4ba2a90f4ab0aad85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneChangeScene
-  timer: 7
-  nextScene: 0-1 Transition
+  timer: 3
   continueButton: {fileID: 2038961430}
 --- !u!4 &13485262
 Transform:
@@ -225,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 13485260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1007.04004, y: 540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -393,8 +392,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b22409b881d8015f19e39959962ea176, type: 2}
+  m_sharedMaterial: {fileID: 1927656495886429635, guid: b22409b881d8015f19e39959962ea176, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -863,8 +862,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: -190}
-  m_SizeDelta: {x: 150, y: 40}
+  m_AnchoredPosition: {x: 300, y: -185}
+  m_SizeDelta: {x: 150, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2038961432
 MonoBehaviour:
@@ -942,7 +941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -2149013520405028821, guid: bfacdfa504cb06d19a227a395fdbf587, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -972,7 +971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1002ebdcdf354ccc9e7e731ea6add97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Code.UI.ChangeSceneButton
-  nextSceneName: 0-1 Transition
+  nextSceneName: Intro-1 Trans
 --- !u!1001 &2100508127
 PrefabInstance:
   m_ObjectHideFlags: 0
