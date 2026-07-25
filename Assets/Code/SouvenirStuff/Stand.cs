@@ -16,6 +16,5 @@ public class Stand : MonoBehaviour
         // var s = Instantiate(providedSouvenir, transform.position, transform.rotation);  // Instantiate a copy of the souvenir
         if (!GameEventManager.instance) return; // If there is no GameEventManager, return
         GameEventManager.instance.souvenirEvents.OnAddSouvenir(providedSouvenir);  // Otherwise, add the souvenir
-        audioSource.Play();
     }
 }
