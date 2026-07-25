@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+    private ParticleSystem dustParticles;
     private Vector2 _movementDirection;
     public float speed;
     private float _speed;
     public float crowdSlowDown;
+    private Vector2 particlesStartPos;
 
     private void Awake()
     {
@@ -28,6 +30,8 @@ public class PlayerController : MonoBehaviour
         GameEventManager.instance.miscellaneousEvents.SlowDown += SlowDown;
         GameEventManager.instance.miscellaneousEvents.SpeedUp += ResetSpeed;
         GameEventManager.instance.timerEvents.timerExpired += DisableMovementOnTimerExpiry;
+
+        particlesStartPos = dustParticles.transform.localPosition;
     }
 
     private void FixedUpdate()
@@ -44,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         _movementDirection = ctx.ReadValue<Vector2>();
         _spriteRenderer.flipX = _movementDirection.x < 0;
+
     }
 
     public void SlowDown()
