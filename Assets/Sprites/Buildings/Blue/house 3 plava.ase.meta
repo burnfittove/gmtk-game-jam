@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 989363768e1f2a0b18f9dcf16111fe95
+guid: bfe7f0f9f25edb57ab069ad2e5462f47
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639205018631739730
+  platformSettingsDirtyTick: 639205936589527270
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: house 1 plava
+  - name: house 3 plava
     originalName: 
-    pivot: {x: 0.6530612, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 49
+      width: 34
       height: 64
-    spriteID: 932ff359189b5df33b5698c52103ef0f
+    spriteID: 52d5b81c50cb656abb8f828fedf74f0c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1841424075
+      value0: 1841356685
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: house 1 plava
+    name: house 3 plava
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: house 1 plava
+    - name: house 3 plava
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
+        x: 15
         y: 0
-        width: 49
+        width: 34
         height: 64
-      spriteId: 932ff359189b5df33b5698c52103ef0f
+      spriteId: 52d5b81c50cb656abb8f828fedf74f0c
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
