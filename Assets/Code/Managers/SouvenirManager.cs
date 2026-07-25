@@ -8,6 +8,7 @@ public class SouvenirManager : MonoBehaviour
     public GameObject[] souvenirs;
     public int souvenirCount;
     private bool _isSouvenirsCollected;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class SouvenirManager : MonoBehaviour
         }
         instance = this;    
         
+        _audioSource = GetComponent<AudioSource>();
         souvenirs = new GameObject[souvenirCount];
     }
 
@@ -42,6 +44,7 @@ public class SouvenirManager : MonoBehaviour
             if (!sr) continue;
             if (!GameEventManager.instance) return;
             GameEventManager.instance.uiEvents.OnAddSouvenirToList(sr); // Pass the SpriteRenderer to DisplaySouvenirs
+            _audioSource.Play();
             break;
         }
 
