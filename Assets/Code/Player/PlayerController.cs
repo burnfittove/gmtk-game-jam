@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         GameEventManager.instance.miscellaneousEvents.SlowDown += SlowDown;
         GameEventManager.instance.miscellaneousEvents.SpeedUp += ResetSpeed;
         GameEventManager.instance.timerEvents.timerExpired += DisableMovementOnTimerExpiry;
+        GameEventManager.instance.sceneEvents.LoadScene += _ => DisableMovementOnTimerExpiry();
     }
 
     private void FixedUpdate()
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private void Move(InputAction.CallbackContext ctx)
     {
         _movementDirection = ctx.ReadValue<Vector2>();
+        if (_movementDirection.x == 0) return;  // Disallow flipping if the player is moving just up or down
         _spriteRenderer.flipX = _movementDirection.x < 0;
     }
 
@@ -58,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
     private void DisableMovementOnTimerExpiry()
     {
+        _rb.linearVelocity = Vector2.zero;
+        if (!GameEventManager.instance) return;
         GameEventManager.instance.inputEvents.Move -= Move;
     }
 }

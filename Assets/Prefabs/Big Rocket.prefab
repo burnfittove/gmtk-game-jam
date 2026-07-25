@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5081633100172289471}
   - component: {fileID: 5612034172557423015}
+  - component: {fileID: 5076203522168905325}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -78,6 +79,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.25, y: 2.25}
   m_EdgeRadius: 0
+--- !u!114 &5076203522168905325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2359154745641793117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57cca7f35d5147678620599906dbdaf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.EnableShipTrigger
+  transitionScene: 
 --- !u!1 &7798167452821930539
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5759697709917661278}
   - component: {fileID: 2624351130156951630}
+  - component: {fileID: 3517196458779028871}
   m_Layer: 0
   m_Name: Big Rocket
   m_TagString: Untagged
@@ -158,6 +173,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &3517196458779028871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798167452821930539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fd4a64761678292b32910b2b901256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpaceshipController
+  _trigger: {fileID: 5612034172557423015}
 --- !u!1 &8486767387375442951
 GameObject:
   m_ObjectHideFlags: 0
