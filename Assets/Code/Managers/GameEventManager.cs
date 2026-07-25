@@ -9,7 +9,6 @@ public class GameEventManager : MonoBehaviour
     public SouvenirEvents souvenirEvents;
     public TimerEvents timerEvents;
     public UIEvents uiEvents;
-    public AudioEvents audioEvents;
     public MiscellaneousEvents miscellaneousEvents;
 
     private void Awake()
@@ -27,7 +26,6 @@ public class GameEventManager : MonoBehaviour
         souvenirEvents = new SouvenirEvents();
         timerEvents = new TimerEvents();
         uiEvents = new UIEvents();
-        audioEvents = new AudioEvents();
         miscellaneousEvents = new MiscellaneousEvents();
     }
 

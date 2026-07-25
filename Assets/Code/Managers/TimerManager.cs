@@ -29,7 +29,7 @@ namespace Code.Managers
         {
             GameEventManager.instance.timerEvents.timerStart += StartTimer;
             GameEventManager.instance.timerEvents.timerUpdate += UpdateTimer;
-            // ##### DEBUG #####
+            // ##### DEBUG ##### oops not anymore, i kinda like this
             GameEventManager.instance.inputEvents.Move += _ => _isTimerActive = true;
         }
 
