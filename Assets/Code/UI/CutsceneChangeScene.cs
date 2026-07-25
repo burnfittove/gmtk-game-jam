@@ -16,7 +16,7 @@ public class CutsceneChangeScene : MonoBehaviour
     {
         _timer = timer;
 
-        if (!continueButton) return;
+        if (continueButton) return;
         Debug.LogError("Continue Button is not assigned!");
         enabled = false;
     }
