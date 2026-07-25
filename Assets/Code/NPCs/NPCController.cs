@@ -43,7 +43,7 @@ public class NPCController : MonoBehaviour
         movementTimerBuffer -= Time.deltaTime;  // Decrease the movement timer
         _animator.SetBool("isWalking", true);
         _spriteRenderer.flipX = randomDirection.x > 0;
-        if (_particleSystem) _particleSystem.transform.rotation = Quaternion.Euler(0f, Mathf.Ceil(randomDirection.x) * 180, 0);
+        if (_particleSystem) 
         if (movementTimerBuffer > 0) return;    // If the timer is above 0, return and keep moving
         Initialize();    // Once it's done, reset both timers
     }

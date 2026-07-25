@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 274523838}
   - component: {fileID: 274523837}
   m_Layer: 0
-  m_Name: Global Light 2D
+  m_Name: Global Light - Level Tint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
