@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 8634073400154977159}
   - component: {fileID: 229886839689523539}
   - component: {fileID: 4480417984666932962}
-  - component: {fileID: -4799642000427803134}
   - component: {fileID: 5635418464389933030}
   - component: {fileID: 285138825523953724}
   - component: {fileID: 733668635626972632}
+  - component: {fileID: -4472605225640818113}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   _colliders: []
-  detectionRadius: 6
+  detectionRadius: 6.5
   detectionRadiusBuffer: 0
-  detectionRadiusDecreaseDivider: 2
+  detectionRadiusDecreaseDivider: 1
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
@@ -185,52 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc68dae26122bfe5080c8243f4d7e5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStateController
---- !u!61 &-4799642000427803134
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4762411659031720884}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 896
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.7, y: 0.7}
-  m_EdgeRadius: 0
 --- !u!95 &5635418464389933030
 Animator:
   serializedVersion: 7
@@ -362,6 +316,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e3de9b849e3049e9be45b6041b69f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogParticles
+--- !u!58 &-4472605225640818113
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762411659031720884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: a0580839f494a74f5a0b2c6610957dd6, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 896
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.4
 --- !u!1 &5520813148198339419
 GameObject:
   m_ObjectHideFlags: 0

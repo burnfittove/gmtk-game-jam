@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
     private void DisableMovementOnTimerExpiry()
     {
         _rb.linearVelocity = Vector2.zero;
+        _movementDirection = Vector2.zero;
         if (!GameEventManager.instance) return;
         GameEventManager.instance.inputEvents.Move -= Move;
     }
