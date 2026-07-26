@@ -7,10 +7,11 @@ namespace Code.Managers
         public static TimerManager instance;
         public float levelTimer;
         public float Timer { get; private set; }
-        public AudioClip tenSecondWarning;
         private bool _isTimerActive;
         private bool _isTimerExpired;
         public string loseSceneName;
+        private AudioSource _audioSource;
+        private bool _isWarned;
 
         private void Awake()
         {
@@ -23,6 +24,7 @@ namespace Code.Managers
             instance = this;
             
             Timer = levelTimer;
+            _audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -41,6 +43,12 @@ namespace Code.Managers
             if (_isTimerExpired) return;
             
             Timer -= Time.deltaTime;
+
+            if (!_isWarned && Timer < 11)
+            {
+                _isWarned = true;
+                _audioSource.volume = 0.7f;
+            }
             
             if (Timer > 0) return;
             if (!GameEventManager.instance) return;
