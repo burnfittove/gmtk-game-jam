@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour
 {
     private bool _isPaused;
-    public GameObject pauseCanvas;
+    public GameObject pauseObject;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -23,13 +23,13 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause()
     {
-        pauseCanvas.SetActive(true);
+        pauseObject.SetActive(true);
         Time.timeScale = 0;
     }
 
     private void Resume()
     {
-        pauseCanvas.SetActive(false);
+        pauseObject.SetActive(false);
         Time.timeScale = 1;
     }
 }

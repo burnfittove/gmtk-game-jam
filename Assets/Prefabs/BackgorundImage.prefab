@@ -51,7 +51,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 252735581883024857, guid: 2f24f6b37f8de71a5bcd12874a771c4e, type: 3}
+  m_Sprite: {fileID: -7443756053782179069, guid: 9c04d93e321554c8eb8e63835ef028dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
