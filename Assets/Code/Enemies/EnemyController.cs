@@ -34,7 +34,6 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D _rb;
     [HideInInspector] public Animator animator;
     private AudioSource _audioSource;
-    public Collider2D crowdCollider;
     
     // [Header("Particles")]
     // public bool loopParticles;

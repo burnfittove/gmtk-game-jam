@@ -14,8 +14,6 @@ namespace Code.Enemies.States
 
         public override void OnEnterState()
         {
-            // if (ec.particles) ec.particles.Play();
-            if (ec.crowdCollider) ec.crowdCollider.gameObject.SetActive(false);
             if (!ec.animator) return;
             ec.animator.SetBool("isChasing", true);
         }
@@ -43,7 +41,6 @@ namespace Code.Enemies.States
 
         public override void OnExitState()
         {
-            if (ec.crowdCollider) ec.crowdCollider.gameObject.SetActive(true);
             if (!ec.animator) return;
             ec.animator.SetBool("isChasing", false);
         }
