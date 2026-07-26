@@ -10,6 +10,4 @@ public class BackgroundMusic : MonoBehaviour
     {
         audioSource.Play();                 
     }
-
-
 }

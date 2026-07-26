@@ -38,6 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 406507402776055467}
+  - {fileID: 596991167538870548}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2647701472746021564
@@ -125,9 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62d52380e6d3153b9d72297010036d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  detectionRadius: 8
+  _colliders: []
+  detectionRadius: 6.5
   detectionRadiusBuffer: 0
-  detectionRadiusDecreaseDivider: 4
+  detectionRadiusDecreaseDivider: 3
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
@@ -136,7 +138,7 @@ MonoBehaviour:
   movementCooldownTimer: 0.2
   movementTimer: 0.5
   randomAddedRange: {x: -0.1, y: 0.2}
-  chasingMovementSpeed: 6
+  chasingMovementSpeed: 5.5
   chasingCrowdSlowDown: 2.5
   chaseEmptyPlayer: 1
   isSlowedDown: 0
@@ -155,8 +157,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _colliders: []
   animator: {fileID: 0}
+  crowdCollider: {fileID: 6756742298377575880}
 --- !u!114 &4480417984666932962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +200,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 896
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -438,3 +440,74 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1001 &218615982782481751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6640264436386887219}
+    m_Modifications:
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374354713792291071, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_Name
+      value: CrowdCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830952664656763039, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+--- !u!4 &596991167538870548 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 810751691565186115, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+  m_PrefabInstance: {fileID: 218615982782481751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &6756742298377575880 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6830952664656763039, guid: a5122ab7de67d42cf8934d1e88b12a02, type: 3}
+  m_PrefabInstance: {fileID: 218615982782481751}
+  m_PrefabAsset: {fileID: 0}
