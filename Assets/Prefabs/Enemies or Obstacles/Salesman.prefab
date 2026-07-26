@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   _colliders: []
-  detectionRadius: 8
+  detectionRadius: 6.5
   detectionRadiusBuffer: 0
   detectionRadiusDecreaseDivider: 3
   detectionMask:
@@ -138,7 +138,7 @@ MonoBehaviour:
   movementCooldownTimer: 0.2
   movementTimer: 0.5
   randomAddedRange: {x: -0.1, y: 0.2}
-  chasingMovementSpeed: 6
+  chasingMovementSpeed: 5.5
   chasingCrowdSlowDown: 2.5
   chaseEmptyPlayer: 1
   isSlowedDown: 0
