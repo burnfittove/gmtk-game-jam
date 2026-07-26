@@ -53,6 +53,7 @@ public class RoamingState : BaseState
     public override void CheckStateChange()
     {
         if (!ec.IsPlayerInRange()) return;
+        if (!SouvenirManager.instance) return;
         if (ec.chaseEmptyPlayer || !SouvenirManager.instance.IsArrayEmpty()) esc.ChangeState(esc.chasingState); // Chase after player either if the enemy can chase after a player with an empty inventory
                                                                                                                 // or the inventory isn't empty
     }

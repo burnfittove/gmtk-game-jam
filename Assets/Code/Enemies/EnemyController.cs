@@ -6,28 +6,39 @@ using UnityEngine.Events;
 public class EnemyController : MonoBehaviour
 {
     private EnemyStateController _esc;
+    public Collider2D[] _colliders = Array.Empty<Collider2D>();
+    
     [Header("Detection Radius")]
     public float detectionRadius;
     [HideInInspector] public float detectionRadiusBuffer;
     [Tooltip("This value divides Time.deltaTime, so the bigger it is, the smaller the decrease /s")] public int detectionRadiusDecreaseDivider;
     public LayerMask detectionMask;
+    
     [Header("Roaming State Values")]    // Most values here and bellow are used by states
     public float roamingMovementSpeed;
     public float roamingCrowdSlowDown;
     public float movementCooldownTimer;
     public float movementTimer;
     public Vector2 randomAddedRange;
+    
     [Header("Chasing State Values")]
     public float chasingMovementSpeed;
     public float chasingCrowdSlowDown;
     public bool chaseEmptyPlayer;
     [HideInInspector] public bool isSlowedDown;
+    
     [Header("OnTouch Action")]
     public UnityEvent OnTouchPlayer;    // In the inspector, add a method from another script to this field
+    
+    [Header("Components")]
     private Rigidbody2D _rb;
-    public Collider2D[] _colliders = Array.Empty<Collider2D>();
     [HideInInspector] public Animator animator;
     private AudioSource _audioSource;
+    public Collider2D crowdCollider;
+    
+    // [Header("Particles")]
+    // public bool loopParticles;
+    // [HideInInspector] public ParticleSystem particles;
  
     private void Awake()
     {
@@ -35,6 +46,7 @@ public class EnemyController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+        // particles = GetComponentInChildren<ParticleSystem>();
         
         detectionRadiusBuffer = detectionRadius;
     }
@@ -57,7 +69,7 @@ public class EnemyController : MonoBehaviour
         if (_esc.currentState !=_esc.chasingState) return;
         _esc.ChangeState(_esc.celebratingState);
         OnTouchPlayer?.Invoke();
-        _audioSource.Play();     
+        _audioSource.Play();
     }
 
     public void MoveEnemy(Vector2 direction, float movementSpeed)

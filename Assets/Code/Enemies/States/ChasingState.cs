@@ -14,6 +14,8 @@ namespace Code.Enemies.States
 
         public override void OnEnterState()
         {
+            // if (ec.particles) ec.particles.Play();
+            if (ec.crowdCollider) ec.crowdCollider.gameObject.SetActive(false);
             if (!ec.animator) return;
             ec.animator.SetBool("isChasing", true);
         }
@@ -22,10 +24,16 @@ namespace Code.Enemies.States
         {
             CheckStateChange();
             
+            
             if (ec.isSlowedDown) _movementSpeedBuffer = movementSpeed - ec.chasingCrowdSlowDown;
             else _movementSpeedBuffer = movementSpeed;
             
             ec.detectionRadiusBuffer -= Time.deltaTime / ec.detectionRadiusDecreaseDivider;
+
+            // if (!ec.particles) return;
+            // if (!ec.loopParticles) return;
+            // if (ec.particles.isPlaying) return;
+            // ec.particles.Play();
         }
 
         public override void OnFixedUpdateState()
@@ -35,6 +43,7 @@ namespace Code.Enemies.States
 
         public override void OnExitState()
         {
+            if (ec.crowdCollider) ec.crowdCollider.gameObject.SetActive(true);
             if (!ec.animator) return;
             ec.animator.SetBool("isChasing", false);
         }

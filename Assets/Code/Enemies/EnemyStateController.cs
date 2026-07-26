@@ -22,6 +22,7 @@ public class EnemyStateController : MonoBehaviour
         celebratingState = new CelebratingState(ec, this);
         
         if (currentState == null) ChangeState(roamingState);
+        if (!GameEventManager.instance) return;
         GameEventManager.instance.timerEvents.timerExpired += DisableStateMachine;
     }
 
