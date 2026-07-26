@@ -12,6 +12,7 @@ namespace Code.Managers
         public string loseSceneName;
         private AudioSource _audioSource;
         private bool _isWarned;
+        private bool _isLevelFinished;
 
         private void Awake()
         {
@@ -33,6 +34,7 @@ namespace Code.Managers
             GameEventManager.instance.timerEvents.timerUpdate += UpdateTimer;
             // ##### DEBUG ##### oops not anymore, i kinda like this
             GameEventManager.instance.inputEvents.Move += _ => _isTimerActive = true;
+            GameEventManager.instance.sceneEvents.LoadScene += _ => _isLevelFinished = true;
         }
 
         private void Update()
@@ -41,6 +43,7 @@ namespace Code.Managers
             
             if (!_isTimerActive) return;
             if (_isTimerExpired) return;
+            if (_isLevelFinished) return;
             
             Timer -= Time.deltaTime;
 
