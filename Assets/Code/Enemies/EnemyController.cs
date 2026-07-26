@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -34,6 +35,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D _rb;
     [HideInInspector] public Animator animator;
     private AudioSource _audioSource;
+    [HideInInspector] public SpriteRenderer _spriteRenderer;
     
     // [Header("Particles")]
     // public bool loopParticles;
@@ -46,6 +48,7 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         // particles = GetComponentInChildren<ParticleSystem>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         
         detectionRadiusBuffer = detectionRadius;
     }

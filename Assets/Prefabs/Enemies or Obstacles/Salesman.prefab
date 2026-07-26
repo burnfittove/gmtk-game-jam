@@ -129,7 +129,7 @@ MonoBehaviour:
   _colliders: []
   detectionRadius: 6
   detectionRadiusBuffer: 0
-  detectionRadiusDecreaseDivider: 2
+  detectionRadiusDecreaseDivider: 3
   detectionMask:
     serializedVersion: 2
     m_Bits: 128
@@ -158,6 +158,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   animator: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
 --- !u!114 &4480417984666932962
 MonoBehaviour:
   m_ObjectHideFlags: 0

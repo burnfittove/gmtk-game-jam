@@ -22,6 +22,7 @@ namespace Code.Enemies.States
         {
             CheckStateChange();
             
+            ec._spriteRenderer.flipX = ec.GetPlayerPosition().x > 0;
             
             if (ec.isSlowedDown) _movementSpeedBuffer = movementSpeed - ec.chasingCrowdSlowDown;
             else _movementSpeedBuffer = movementSpeed;
