@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 389aec725f7640f93a3a7a552c687771
+guid: 02581a6cb356829e2b5f8fc492411663
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639205781676511190
+  platformSettingsDirtyTick: 639206291888050290
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: vendor 1 mis
+  - name: smedi mis vendor 3
     originalName: 
-    pivot: {x: 0.6, y: -0.2}
+    pivot: {x: 0.5, y: -0.18181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -138,8 +138,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 10
-      height: 10
-    spriteID: 3362d78d04759728891f9291520da8c5
+      height: 11
+    spriteID: b7ebb41f97ad50449880db942c33acd2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 4055486936
+      value0: 1578708460
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: vendor 1 mis
+    name: smedi mis vendor 3
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: vendor 1 mis
+    - name: smedi mis vendor 3
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 2
+        x: 3
         y: 2
         width: 10
-        height: 10
-      spriteId: 3362d78d04759728891f9291520da8c5
+        height: 11
+      spriteId: b7ebb41f97ad50449880db942c33acd2
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

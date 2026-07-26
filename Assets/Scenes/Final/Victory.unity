@@ -963,6 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Code.UI.ChangeSceneButton
   nextSceneName: Main Menu
+  clickSound: {fileID: 8300000, guid: b382647c84498cf6a98e808963f7cd28, type: 3}
 --- !u!114 &1915069538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,6 +1104,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneChangeScene
   timer: 5
   continueButton: {fileID: 1915069535}
+--- !u!1001 &2081215506
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5142166348412460877, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.5918
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.47527
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873914371634610111, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7454a57e349c9fcc582dcaa99ebafea3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1113,3 +1171,4 @@ SceneRoots:
   - {fileID: 115644693}
   - {fileID: 1028652464}
   - {fileID: 2034436088}
+  - {fileID: 2081215506}
