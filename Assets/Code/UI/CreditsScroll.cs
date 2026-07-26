@@ -17,6 +17,8 @@ public class CreditsScroll : MonoBehaviour
     [SerializeField] private bool disableWhenFinished = true;
     [SerializeField] private bool destroyWhenFinished = false;
 
+    public string mainMenuScene = "Main Menu";
+
     private RectTransform creditsRect;
 
     private void Awake()
@@ -38,26 +40,25 @@ public class CreditsScroll : MonoBehaviour
 
     private void Update()
     {
-        creditsRect.anchoredPosition += Vector2.up * scrollSpeed * Time.deltaTime;
+        creditsRect.anchoredPosition += Vector2.up * (scrollSpeed * Time.deltaTime);
 
-        if (creditsRect.anchoredPosition.y >= endY)
+        if (!(creditsRect.anchoredPosition.y >= endY)) return;
+        if (destroyWhenFinished)
         {
-            if (destroyWhenFinished)
-            {
-                Destroy(creditsText.gameObject);
-            }
-            else if (disableWhenFinished)
-            {
-                creditsText.gameObject.SetActive(false);
-            }
-
-            enabled = false;
+            Destroy(creditsText.gameObject);
         }
+        else if (disableWhenFinished)
+        {
+            if (!GameEventManager.instance) return;
+            GameEventManager.instance.sceneEvents.OnLoadScene(mainMenuScene);
+        }
+
+        enabled = false;
     }
 
     public void ResetCredits()
     {
-        Vector2 position = creditsRect.anchoredPosition;
+        var position = creditsRect.anchoredPosition;
         position.y = startY;
         creditsRect.anchoredPosition = position;
     }
